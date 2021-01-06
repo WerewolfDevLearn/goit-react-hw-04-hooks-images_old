@@ -51,10 +51,6 @@ function App() {
     setLoading(false);
   };
 
-  const saveLargeImage = largeImageURL => {
-    setLargeImageURL(largeImageURL);
-  };
-
   const hideLargeImage = () => {
     setLargeImageURL(null);
   };
@@ -79,7 +75,7 @@ function App() {
     <>
       <Searchbar onSubmitForm={onSubmitForm} />
       {images.length > 0 && (
-        <ImageGallery images={images} onImageClick={saveLargeImage} />
+        <ImageGallery images={images} onImageClick={setLargeImageURL} />
       )}
       {largeImageURL && (
         <Modal onCloseModal={hideLargeImage}>
