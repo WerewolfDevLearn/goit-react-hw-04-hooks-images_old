@@ -35,6 +35,7 @@ function App() {
     }
 
     fetchImage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [keyword]);
 
   useEffect(() => {
@@ -59,7 +60,10 @@ function App() {
   };
 
   const isLastPage = data => {
-    if (images.length === data.totalHits) {
+    const perPage = 12;
+    const dif = data.totalHits - perPage * page;
+
+    if (dif <= 0) {
       setLastPage(true);
     }
   };
