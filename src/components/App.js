@@ -48,7 +48,6 @@ function App() {
     setKeyword(query);
     setPage(1);
     setImages([]);
-    setLoading(false);
   };
 
   const hideLargeImage = () => {
@@ -61,6 +60,8 @@ function App() {
 
     if (dif <= 0) {
       setLastPage(true);
+    } else {
+      setLastPage(false);
     }
   };
 
